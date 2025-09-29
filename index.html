@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Progress</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+  font-family: sans-serif;
+}
+
+.circle-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(#4caf50 0deg, #ddd 0deg); /* Progress color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  border:  10px solid yellow;
+}
+
+</style>
+
+<body>
+
+<div class="circle-container">
+  <div class="circle">
+    <span id="progress-text">0%</span>
+  </div>
+</div>
+
+<script>
+
+    let progress = 0; // starting progress
+const circle = document.querySelector('.circle');
+const progressText = document.getElementById('progress-text');
+
+function updateProgress(value) {
+  // Update the conic-gradient for progress
+  circle.style.background = `conic-gradient(#4caf50 ${value * 3.6}deg, #ddd 0deg)`;
+  progressText.textContent = `${value}%`;
+}
+
+// Animate the progress
+let interval = setInterval(() => {
+  if (progress >= 65) { // Set target progress here (e.g., 65%)
+    clearInterval(interval);
+  } else {
+    progress++;
+    updateProgress(progress);
+  }
+}, 50);
+
+
+</script>
+</body>
+</html>

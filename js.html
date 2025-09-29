@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+
+    <h1> promise here</h1>
+    <p id="demo"> </p>
+    <button type="button" onclick="greet()"> click me</button>
+
+
+
+     <br>
+
+     <hr>
+
+
+     <p id="demo2"></p>
+     <button type="button" onclick="Add()"> Add button</button>
+      
+     
+     <br>
+
+     <hr>
+
+
+     <p id="demo3"></p>
+
+
+
+     <br>
+     <hr>
+
+
+     <p id="demo4"></p>
+
+     
+
+     <br>
+
+     <hr>
+
+
+     <p id="demo5"></p>
+     <p> using arrow fun btn</p>
+     <p id="demo5-1"></p>
+     <button type="button" onclick="buttonarrow()">Multiply button</button>
+      
+     
+     <br>
+
+     <hr>
+
+
+     <p id="demo6"></p>
+
+     <br>
+     <hr>
+     <p id="demo7"></p>
+   
+   
+</body>
+<script>
+    
+    // function declare...
+
+    function greet(){
+        document.getElementById("demo").innerHTML = " You Clicked Me ";
+    };
+
+
+    // function with parameter
+    function Add(a= 5, b=10){
+        let result = a + b;
+        document.getElementById("demo2").innerHTML = result
+    };
+
+
+    // function expression
+            const nameGreet = function(name) {
+                return "Hello " + name;
+            };
+
+            let resultsname = nameGreet("Mehran");
+            document.getElementById("demo3").innerHTML = resultsname;
+
+
+            //funtion with default paramter
+
+            function sayMyName( x , b = " mehran"){
+                let fullname =  x + b;
+                return fullname;
+            }
+
+            document.getElementById("demo4").innerHTML = sayMyName("md");
+
+
+            //arrow function 
+           const salam = (name) => {
+            return `hello, ${name}`;
+           };
+
+           document.getElementById("demo5").innerHTML = salam("mehran");
+
+
+           // arrow function using button click
+
+           const buttonarrow = (a=5, b=10) => {
+            addusingarrow = a+b;
+            document.getElementById("demo5-1").innerHTML =addusingarrow;
+           }
+           
+
+           // anonymous function
+           
+           setTimeout(function () {
+            document.getElementById("demo6").innerHTML= "run after time inteval";
+           },2000);
+
+           // Imediate invoke fun
+
+           (function(){
+            document.getElementById("demo7").innerHTML = " invoke function ";
+           }) ();
+
+</script>
+</html>
